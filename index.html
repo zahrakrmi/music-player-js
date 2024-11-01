@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/css/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="text-white">
+    <main id="main" class="w-full h-[100vh] flex flex-wrap overflow-x-hidden overflow-y-hidden">
+        <!-- /////////////////start header///////////////////// -->
+
+        <header class="w-full h-[70px]  flex items-center bg-black justify-between">
+         <i class="bi bi-spotify text-[30px] m-5  w-[5%]"></i>
+            <div class="w-[50%]  h-full flex justify-evenly items-center ml-36">
+                <i id="home" class="bi bi-house-door text-[30px] bg-[#1a1a1a] py-1 rounded-full w-[7%] text-center"></i>
+                <div class="w-[80%]  rounded-2xl h-[50%] ">
+                    <i id="search" class="bi bi-search w-[25%] h-full text-[25px]"></i>
+                    <input id="searchbox" type="text" class="outline-none border-none bg-black w-[60%] h-full mx-5 placeholder:text-[20px]" placeholder="what do you want to play?">
+                    <i class="bi bi-archive-fill h-full text-[25px]"></i>
+                </div>
+            </div>
+            <div class="w-[15%] h-full  flex items-center">
+                <span class="flex text-[20px] w-[50%] hover:scale-110 transition-all duration-300">Sign up</span>
+                <button class="outline-none border-none bg-white  text-black rounded-3xl w-[50%] py-2 text-[20px] mr-1 hover:scale-110 transition-all duration-300">Log in</button>
+            </div>
+        </header>
+        <section id="whole" class="w-full h-fit flex flex-wrap justify-center content-start relative ">
+            <section id="firstsec" class="w-full h-[100vh] flex flex-wrap justify-between content-between bg-black p-4 relative">
+                
+
+                <!-- ///////////////start sec1 library/////////////// -->
+                 <div id="leftside " class="h-[84%] w-[23%] flex flex-wrap justify-center content-between ">
+                    <div class="w-full h-full rounded-xl bg-[#1a1a1a] flex flex-wrap px-2 relative items-start ">
+                        <button class="w-[50%]  mt-5 hover:text-gray-300"><i class="bi bi-music-note-list p-2 text-[20px]"></i>Your Library</button>
+                        <i class="bi bi-plus w-[40%]  text-end text-[25px] mt-5 hover:text-gray-300  "></i>
+                    </div>
+                 </div>
+
+
+
+
+                 <!-- ///////////////start sec2////////////// -->
+                  <div id="music_box_main" class="absolute right-0 w-[75%] h-[90%] flex flex-wrap bg-[#1a1a1a] rounded-xl overflow-y-scroll  overflow-x-hidden">
+
+                    <!-- /////////////////start page play///////////// -->
+                    <section id="playingpage" class="bg-green-300 w-full h-[87%] hidden  absolute top-0 left-0 z-40 flex-wrap justify-start content-center overflow-hidden transition-all duration-700">
+                        <div class="w-[100%] h-[60%] flex pl-10 content-end items-end my-10 bg-green-300">
+                            <figure id="fig" class="w-[250px] h-[250px] overflow-hidden cursor-pointer shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]">
+                                <img src="" alt="" id="pic" class="h-full w-full object-cover ">
+                            </figure>
+                            <div class="w-[60%] h-[60%] flex flex-wrap content-center ml-10">
+                                <span class="namemusic w-full text-white text-start text-[80px] font-extrabold mt-5"></span>
+                                <span class="namesinger w-full text-start text-black text-[40px] font-bold "></span>
+                            </div>
+                        </div>
+                        <div class=" w-full h-[40%] bg-gray flex items-start pl-10 py-10 bg-gradient-to-b from-[#1e201a] to-[#9be5ac]">
+                            <button onclick="play_music()" class="relative w-[50px] h-[50px] flex justify-center items-center">
+                                <span class="play_pause text-[50px] cursor-pointer hover:scale-110 transition-all duration-300 relative">
+                                    <i class="play bi bi-play-circle text-[50px] cursor-pointer hover:scale-110 transition-all duration-300 text-[#9be5ac]"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- //////////////////start album music/////////////////////// -->
+                     <div class="flex justify-center flex-wrap w-full  h-[400px]">
+                        <a class=" flex w-full h-[70px] ml-8 p-2 text-[30px] cursor-pointer  hover:underline">Popular artists</a>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center  content-center p-2 hover:bg-[#83838461] group transition-all duration-300 ">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-full relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/1.jpeg" alt="">
+                            </figure>
+                            <i class=" play_symbolbi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Lady Gaga</span>
+                            <audio src="asset/audio/Lady Gaga - Disease (128).mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-full relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/2.jpeg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Taylor Swift</span>
+                            <audio src="asset/audio/taylor_swift_-_i_can_do_it_with_a_broken_heart.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-full relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/3.jpeg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Billie Eilish</span>
+                            <audio src="asset/audio/Billie Eilish - L’AMOUR DE MA VIE 128.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-full relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/4.jpeg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Rose</span>
+                            <audio src="asset/audio/ROSÉ & Bruno Mars – APT..mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-full relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/5.jpeg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Sabrina Carpenter</span>
+                            <audio src="asset/audio/espresso_-_sabrina_carpenter.mp3"></audio>
+                        </div>
+                     </div>
+
+                     <!-- ////////////////////start album2//////////////////////////// -->
+                    <div class="flex justify-center flex-wrap w-full  h-[400px]">
+                        <a class=" flex w-full h-[70px] ml-8 p-2 text-[30px] cursor-pointer  hover:underline">Most play</a>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center  content-center p-2 hover:bg-[#83838461] group transition-all duration-300 ">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/15.jpg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Monaco</span>
+                            <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/7.jpg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">A la vie a la</span>
+                            <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/8.jpg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">David Guetta</span>
+                            <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/9.jpg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Jul</span>
+                            <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                        </div>
+                        <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                            <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/10.jpg" alt="">
+                            </figure>
+                            <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                            <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                            <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Gims</span>
+                            <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                        </div>
+
+                        <!-- ////////////////////start album3////////////////////// -->
+                        <div class="flex justify-center flex-wrap w-full  h-[400px]">
+                            <a class=" flex w-full h-[70px] ml-8 p-2 text-[30px] cursor-pointer  hover:underline">Popular song</a>
+                            <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center  content-center p-2 hover:bg-[#83838461] group transition-all duration-300 ">
+                                <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                    <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/11.jpg" alt="">
+                                </figure>
+                                <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                                <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                                <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Coldplay</span>
+                                <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                            </div>
+                            <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                                <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                    <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/12.jpg" alt="">
+                                </figure>
+                                <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                                <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                                <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Guy2Bezber</span>
+                                <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                            </div>
+                            <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                                <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                    <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/13.jpg" alt="">
+                                </figure>
+                                <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                                <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                                <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">booba</span>
+                                <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                            </div>
+                            <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                                <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                    <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/14.jpg" alt="">
+                                </figure>
+                                <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                                <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                                <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Rihanna</span>
+                                <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                            </div>
+                            <div  class="relative music_box w-[200px] h-[300px] rounded-xl  flex flex-wrap justify-center content-center p-2 hover:bg-[#83838461] group transition-all duration-300">
+                                <figure class="w-[90%] h-[58%] overflow-hidden cursor-pointer rounded-md relative">
+                                    <img class="w-full h-full object-contain hover:scale-110 transition-all duration-500" src="asset/img/15.jpg" alt="">
+                                </figure>
+                                <i class="play_symbol bi bi-play-circle-fill absolute bottom-20 right-10 text-green-300 text-[50px] opacity-0 group-hover:opacity-100"></i>
+                                <span class="musicname w-full flex justify-start items-center text-white font-bold text-[15px] pl-3 mt-3">Artist</span>
+                                <span class="singername w-full flex justify-start items-center text-white font-bold text-[12px] pl-3">Plk</span>
+                                <audio src="asset/audio/René_Aubry_Killer_Kid_01_A_La_Vie_.mp3"></audio>
+                            </div>
+                       
+                     </div>
+
+                     <!-- /////////////////////////////footer/////////////////////////////// -->
+                     <section class="w-full h-[170vh] lg:h-[60vh] flex flex-wrap justify-start content-center bg-red ml-10 ">
+                        <div class="w-full h-[70%] flex flex-wrap justify-center content-center">
+                            <div class="w-full lg:w-[20%] h-fit flex justify-start items-center p-4 flex-wrap">
+                                <span class="flex w-full text-[20x] text-white justify-start p-2">Company</span>
+                                <ul class="w-full flex flex-wrap justify-start content-start p-2">
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="">About</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="">Jobs</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="">For the Record</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-[20%] h-fit flex justify-start items-center p-4  flex-wrap">
+                                <span class="flex w-full text-[20px] text-white justify-start p-2">Developers</span>
+                                <ul class="w-full flex flex-wrap justify-start content-start p-2">
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/zahra-karami-7643ba231/">Zahra Karami</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/fateme-abdolmaleki/">Fatemeh Abdolmaleki</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/mobina-lazemi-234683320/">Mobina Lazemi</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/parnian-karimian-a73855285/">Parnian Karimian</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-[20%]  flex justify-start items-center p-4  flex-wrap h-fit ">
+                                <span class="flex w-full text-[20px] text-white justify-start p-2">Useful links</span>
+                                <ul class="w-full flex flex-wrap justify-start content-start p-2">
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="">Support</a></li>
+                                    <li class="w-full text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="">Free Mobile App</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-[30%] h-fit flex justify-start items-center p-4   flex-wrap">
+                                <span class="flex w-full text-[20px] text-white justify-start p-2">Contact Us</span>
+                                <ul class="w-full flex justify-start content-start p-2">
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/zahra-karami-7643ba231/"><i class="bi bi-linkedin"></i></a></li>
+                                    <li class="mx-8 text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://github.com/zahrakrmi"><i class="bi bi-github"></i></a></li>
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.instagram.com/zahra_karami_developer"><i class="bi bi-instagram"></i></a></li>
+                                </ul>
+                                <ul class="w-full flex  justify-start content-start p-2">
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/fateme-abdolmaleki/"><i class="bi bi-linkedin"></i></a></li>
+                                    <li class="mx-8 text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://github.com/fatemeabdolmaleki"><i class="bi bi-github"></i></a></li>
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.instagram.com/fatemeabdolmaleki_"><i class="bi bi-instagram"></i></a></li>
+                                </ul>
+                                <ul class="w-full flex  justify-start content-start p-2">
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/mobina-lazemi-234683320/"><i class="bi bi-linkedin"></i></a></li>
+                                    <li class="mx-8 text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://github.com/mobinalazemi"><i class="bi bi-github"></i></a></li>
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://instagram.com/mobinalazemi_web"><i class="bi bi-instagram"></i></a></li>
+                                </ul>
+                                <ul class="w-full flex  justify-start content-start p-2">
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.linkedin.com/in/parnian-karimian-a73855285/"><i class="bi bi-linkedin"></i></a></li>
+                                    <li class="mx-8 text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://github.com/ParnianKarimian"><i class="bi bi-github"></i></a></li>
+                                    <li class=" text-[15px] text-[#767676] text-start flex justify-start items-center hover:text-white transition-all duration-300"><a href="https://www.instagram.com/parniankarimian_web"><i class="bi bi-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-full  flex flex-wrap  p-5 ">
+                        <span class="w-full  h-full flex pt-5 pb-28 border-t-2">© 2024 Spotify AB</span>
+                        </div>
+                    </section>
+
+                    <!-- //////////////////////////play//////////////////////// -->
+                    <div id="controlSection" class="w-[99%] h-[15%] lg:h-[10%] bg-black fixed bottom-0 left-0 rounded-xl flex flex-wrap justify-between px-2  items-center ">
+                        <div class="h-full w-[35%] lg:w-[25%] flex flex-wrap justify-start content-center ">
+                            <figure class="w-[60px] lg:w-[80px] lg:h-[65px] overflow-hidden rounded-xl m-5"><img class="w-full h-full  object-cover" src="" alt=""></figure>
+                            <div class=" lg:w-[30%] w-[40%] h-[60px] lg:h-[80px] flex flex-wrap justify-start content-center  lg:ml-2 ">
+                                <span class="namesinger w-full h-[45%] text-[15px] text-start m-5  "></span>
+                                <span class="namemusic w-full h-[0%] text-[12px] text-start" ></span>
+                            </div>
+                            <i class="like bi bi-heart-fill text-[20px] cursor-pointer hover:scale-110 transition-all duration-300 flex justify-center items-center ml-2"></i>
+                        </div>
+                        <div class="h-full w-[60%] lg:w-[50%] flex flex-wrap justify-center content-center ">
+                            <div class="w-full h-[40px] flex justify-center items-center">
+                               <div class="lg:w-[30%] w-[60%] h-full flex justify-between items-center ">
+                                <i id="shuffle" class="bi bi-shuffle text-[20px] cursor-pointer hover:scale-110 transition-all duration-300"></i>
+                                <i id="previous" class=" bi bi-skip-backward-fill text-[20px] cursor-pointer hover:scale-110 transition-all duration-300"></i>
+                                <button  onclick="play_music()" class="relative w-[30px] h-[30px]  flex justify-center items-center playorpause">
+                                    <span class="play_pause text-[30px] cursor-pointer hover:scale-110 transition-all duration-300"><i class="play bi bi-play-circle-fill text-[30px] cursor-pointer hover:scale-110 transition-all duration-300 text-white "></i></span>
+                                </button>
+                                <i id="next" class=" bi bi-skip-forward-fill text-[20px] cursor-pointer hover:scale-110 transition-all duration-300"></i>
+                                <i id="repeat" class=" bi bi-repeat text-[20px] cursor-pointer hover:scale-110 transition-all duration-300 "></i>
+                               </div>
+                            </div>
+                            <span class="line w-[700px] h-[5px]  bg-[#767676] cursor-pointer relative mt-4">
+                                <span id="fill_line" class="  h-full absolute top-0 left-0 bg-white w-0"></span>
+                            </span>
+                        </div>
+                        <div class="h-full w-[20%] justify-between items-center hidden lg:flex ">
+                            
+                            <i id="add_to_library" class="bi bi-plus-circle-fill text-[20px] text-red cursor-pointer hover:scale-110 transition-all duration-300"></i>
+                            <a href=""><i id="download" class="download bi bi-cloud-arrow-down-fill text-[20px] text-white cursor-pointer hover:scale-110 transition-all duration-300"></i></a>
+                            <span id="vol">
+                                <i  class="bi bi-volume-up-fill text-[20px] text-white cursor-pointer hover:scale-110 transition-all duration-300"></i></i>
+                            </span>
+                            <input id="volume_range" type="range" min="0" max="10" >
+                        </div></div></section></section></main>
+                        <script src="asset/js/master.js"></script>
+</body>
+</html>
